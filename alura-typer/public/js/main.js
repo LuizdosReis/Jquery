@@ -1,2 +1,5 @@
-console.log("ola mundo");
+qtPalavras = $(".frase").text().split(" ").length;
+$('#qt_palavras').text(qtPalavras);
+
+
 
