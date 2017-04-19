@@ -9,4 +9,20 @@ campo.on('input', function() {
 });
 
 
+campo.one('focus',function(){
+     var tempo = $('#tempo').text();
+     var cronometroId  = setInterval(function(){
+            tempo--;
+            $('#tempo').text(tempo);
+            if(tempo < 1){
+                campo.attr('disabled', 'true');
+                clearInterval(cronometroId);
+            }
+        },1000);
+
+
+});
+
+
+
 
