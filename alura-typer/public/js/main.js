@@ -25,11 +25,13 @@ function atualizaContadores(){
 function cronometro(){
     campo.one('focus',function(){
         var tempo = tempoInicial;
+        $('#botao-reiniciar').attr('disabled', true);
         var cronometroId  = setInterval(function(){
             tempo--;
             $('#tempo').text(tempo);
             if(tempo < 1){
                 campo.attr('disabled', true);
+                $('#botao-reiniciar').attr('disabled', false);
                 clearInterval(cronometroId);
             }
         },1000);
