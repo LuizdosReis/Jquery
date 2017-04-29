@@ -32,6 +32,7 @@ function cronometro(){
             if(tempo < 1){
                 campo.attr('disabled', true);
                 $('#botao-reiniciar').attr('disabled', false);
+                campo.addClass('campo-desativado');
                 clearInterval(cronometroId);
             }
         },1000);
@@ -41,6 +42,7 @@ function cronometro(){
 function reiniciaJogo(){
         campo.attr('disabled', false);
         campo.val('');
+        campo.removeClass('campo-desativado');
         $('#contador-palavras').text('0');
         $('#contador-caracter').text('0');
         $('#tempo').text( tempoInicial);
