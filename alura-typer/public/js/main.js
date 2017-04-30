@@ -5,7 +5,6 @@ var campo = $('.campo-digitacao');
 $(function(){
     atualizaTamanhoFrase();
     atualizaContadores();
-    atualizaContadores();
     inicializaMarcadores();
     cronometro();
     $('#botao-reiniciar').click(reiniciaJogo);
@@ -32,15 +31,29 @@ function cronometro(){
             tempo--;
             $('#tempo').text(tempo);
             if(tempo < 1){
+                clearInterval(cronometroId);
                 campo.attr('disabled', true);
                 $('#botao-reiniciar').attr('disabled', false);
                 comparaPalavras($('.frase').text(),campo.val());
                 campo.addClass('campo-desativado');
-                clearInterval(cronometroId);
+                inserePlacar();
             }
         },1000);
     });
 };
+
+function inserePlacar(){
+            var corpoTabela = $('.placar').find('tbody');
+            var palavras = $('#contador-palavras').text();
+            var usuario = 'luiz henrique';
+
+            linha = '<tr>'+
+                            '<td class="center">'+usuario+'</td>'+
+                            '<td class="center">'+palavras+'</td>'+
+                        '</tr>';
+
+            corpoTabela.prepend(linha);
+}
 
 function comparaPalavras(frase,digitado){
     if(frase == digitado){
