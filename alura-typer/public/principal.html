@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <title>Alura Typer</title>
     <link rel="stylesheet"  href="css/libs/materialize.min.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link rel="stylesheet"  href="css/estilos.css">
 </head>
 <body>
@@ -13,8 +14,14 @@
         <p class="frase center">duas palavras.</p>
 
         <ul class="informações center">
-            <li><span id="qt_palavras">5</span> palavras</li>
-            <li><span id="tempo">3</span> segundos</li>
+            <li>
+                <i class="small material-icons icones">query_builder</i>
+                <span id="qt_palavras">5</span> palavras
+            </li>
+            <li>
+                <i class="small material-icons icones">description</i>
+                <span id="tempo">3</span> segundos
+            </li>
         </ul>
 
         <textarea class="campo-digitacao" rows="8" cols="40"></textarea>
@@ -24,7 +31,13 @@
             <li><span id="contador-palavras">0</span> palavras</li>
         </ul>
 
-        <button id="botao-reiniciar">Reiniciar Jogo</button>
+        <div class="botoes">
+             <a class="btn-floating btn-large waves-effect waves-light red" id="botao-reiniciar">
+                <i class="material-icons">restore</i>
+            </a>
+
+        </div>
+
     </div>
     <script src="js/jquery.js"></script>
     <script src="js/main.js"></script>
