@@ -3,7 +3,6 @@ $('#botao-placar').click(mostarPlacar);
 
 function mostarPlacar(){
   $('.placar').stop().slideToggle(600);
-  scrollParaPlacar();
 }
 
 function scrollParaPlacar(){
