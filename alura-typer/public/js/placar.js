@@ -1,3 +1,11 @@
+$('#botao-placar').click(mostarPlacar);
+
+
+function mostarPlacar(){
+  $('.placar').slideToggle(600);
+}
+
+
 function inserePlacar(){
             var corpoTabela = $('.placar').find('tbody');
             var palavras = $('#contador-palavras').text();
