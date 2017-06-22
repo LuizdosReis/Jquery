@@ -3,19 +3,43 @@ $('#botao-placar').click(mostarPlacar);
 
 function mostarPlacar(){
   $('.placar').stop().slideToggle(600);
+  scrollParaPlacar();
+}
+
+function scrollParaPlacar(){
+  let posicaoPlacar = $('.placar').offset().top;
+
+  $('body').animate({
+    scrollTop: posicaoPlacar + 'px'
+  },1000);
+}
+
+function mostarPlacar(){
+  $('.placar').stop().slideToggle(600);
+}
+
+function scrollParaPlacar(){
+  let posicaoPlacar = $('.placar').offset().top;
+
+  $('body').animate({
+    scrollTop: posicaoPlacar + 'px'
+  },1000);
 }
 
 
 function inserePlacar(){
-            var corpoTabela = $('.placar').find('tbody');
-            var palavras = $('#contador-palavras').text();
-            var usuario = 'luiz henrique';
+  var corpoTabela = $('.placar').find('tbody');
+  var palavras = $('#contador-palavras').text();
+  var usuario = 'luiz henrique';
 
-            linha = criarLinha(usuario,palavras);
+  linha = criarLinha(usuario,palavras);
+  linha.find('.remover').click(removerLinhas);
 
-            linha.find('.remover').click(removerLinhas);
+  corpoTabela.prepend(linha);
 
-            corpoTabela.prepend(linha);
+  $('.placar').slideDown(600);
+  scrollParaPlacar();
+
 }
 
 
