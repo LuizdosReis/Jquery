@@ -2,7 +2,7 @@ $('#botao-placar').click(mostarPlacar);
 
 
 function mostarPlacar(){
-  $('.placar').slideToggle(600);
+  $('.placar').stop().slideToggle(600);
 }
 
 
