@@ -43,5 +43,9 @@ function criarLinha(usuario,palavras){
 
 function removerLinhas(event) {
     event.preventDefault();
-    $(this).parents('tr').remove();
+    let linha = $(this).parents('tr');
+    linha.fadeOut(1000);
+    setTimeOut(function(){
+        linha.remove();
+    },1000);
 };
