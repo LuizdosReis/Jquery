@@ -68,7 +68,7 @@ function removerLinhas(event) {
     event.preventDefault();
     let linha = $(this).parents('tr');
     linha.fadeOut(1000);
-    setTimeOut(function(){
+    setTimeout(function(){
         linha.remove();
     },1000);
 };

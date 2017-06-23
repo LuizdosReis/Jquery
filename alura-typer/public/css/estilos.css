@@ -2,7 +2,6 @@ body{
   overflow: scroll;
 }
 
-
 .campo-digitacao{
     font-size: 20px;
     height: 130px;
@@ -31,5 +30,10 @@ body{
 }
 
 .placar{
+  display: none;
+}
+
+#erro{
+  color: red;
   display: none;
 }
