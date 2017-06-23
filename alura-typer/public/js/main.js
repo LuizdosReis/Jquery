@@ -16,6 +16,11 @@ function atualizaTamanhoFrase(){
     $('#qt_palavras').text(qtPalavras);
 }
 
+function atualizaTempoInicial(tempo){
+  tempoInicial = tempo;
+  $('#tempo').text(tempo);
+}
+
 function atualizaContadores(){
     campo.on('input', function() {
         $('#contador-palavras').text(campo.val().split(/\S+/).length -1);
@@ -72,17 +77,3 @@ function reiniciaJogo(){
         $('#tempo').text( tempoInicial);
         cronometro();
 };
-
-
-
-
-
-
-
-
-
-
-
-
-
-
