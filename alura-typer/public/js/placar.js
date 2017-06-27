@@ -30,7 +30,7 @@ function scrollParaPlacar(){
 function inserePlacar(){
   var corpoTabela = $('.placar').find('tbody');
   var palavras = $('#contador-palavras').text();
-  var usuario = 'luiz henrique';
+  var usuario = $('#usuarios').val();
 
   linha = criarLinha(usuario,palavras);
   linha.find('.remover').click(removerLinhas);
@@ -95,7 +95,16 @@ function sincronizarPlacar(){
 
   $.post("http://localhost:3000/placar",dados,function(){
     console.log("dados enviados");
+    $('.tooltip').tooltipster('open');
   })
+  .fail(function(){
+    $('.tooltip').tooltipster('open').tooltipster('content','Falha ao sincronizar o placar');
+  })
+  .always(function(){
+    setTimeout(function(){
+      $('.tooltip').tooltipster('close');
+    },1000);
+  });
 }
 
 
